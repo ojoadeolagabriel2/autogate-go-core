@@ -3,9 +3,7 @@
 # see: https://go.dev/doc/modules/publishing
 
 set -x
-
-MY_PATH=$(dirname "$0")
-MY_PATH=$(cd "$MY_PATH" && cd .. && pwd)
+MY_PATH=$(cd $(dirname "$0") && cd .. && pwd)
 
 VERSION_MAJOR=${ENV_VERSION_MAJOR:-0}
 VERSION_MINOR=${ENV_VERSION_MINOR:-1}
