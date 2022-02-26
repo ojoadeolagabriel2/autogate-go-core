@@ -15,8 +15,10 @@ cd "$MY_PATH"
 
 go mod tidy
 go test ./...
+
 git add . && git commit -m "commit autogate-go-core: changes for $CURRENT_VERSION"
 git push
+
 git commit -m "autogate-go-core: changes for $CURRENT_VERSION"
 git tag "$CURRENT_VERSION"
 git push origin "$CURRENT_VERSION"
