@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-set -ex
+set -x
 
 MY_PATH=$(dirname "$0")
 MY_PATH=$(cd "$MY_PATH" && cd .. && pwd)
@@ -15,6 +15,8 @@ cd "$MY_PATH"
 
 go mod tidy
 go test ./...
+git add .
 git commit -m "autogate-go-core: changes for $CURRENT_VERSION"
+git push
 git tag "$CURRENT_VERSION"
 git push origin "$CURRENT_VERSION"
